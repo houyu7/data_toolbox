@@ -1,0 +1,8 @@
+完成时间,11
+错误次数,4
+PerOffsetDistanceRatio_7,1.01100152501041
+TotalSelectTime,13188
+PerDrawingSpeedCV_14,0.162893406566006
+PerDrawingAvgSpeed_11,0.156963
+PerDrawingSpeedCV_23,0.442747181373438
+AllOffsetAvgDistanceRatio_seg,1.01579884528014

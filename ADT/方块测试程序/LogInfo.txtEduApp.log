@@ -1,0 +1,21 @@
+
+[2016-01-05 13:18:10]：操作已超时。
+   在 System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   在 System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count)
+   在 System.IO.Ports.SerialPort.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 NewVersion_1._0._0.com_class.ReadPort() 位置 c:\Users\d\Desktop\ASN_Software\NewVersion_1.0.0\NewVersion_1.0.0\com_class.cs:行号 117
+[2016-01-05 13:18:10]：操作已超时。
+   在 System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   在 System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count)
+   在 System.IO.Ports.SerialPort.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 NewVersion_1._0._0.com_class.ReadPort() 位置 c:\Users\d\Desktop\ASN_Software\NewVersion_1.0.0\NewVersion_1.0.0\com_class.cs:行号 117
+[2016-01-05 13:18:10]：操作已超时。
+   在 System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   在 System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count)
+   在 System.IO.Ports.SerialPort.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 NewVersion_1._0._0.com_class.ReadPort() 位置 c:\Users\d\Desktop\ASN_Software\NewVersion_1.0.0\NewVersion_1.0.0\com_class.cs:行号 117
+[2016-01-05 13:18:10]：操作已超时。
+   在 System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   在 System.IO.Ports.SerialStream.Read(Byte[] array, Int32 offset, Int32 count)
+   在 System.IO.Ports.SerialPort.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 NewVersion_1._0._0.com_class.ReadPort() 位置 c:\Users\d\Desktop\ASN_Software\NewVersion_1.0.0\NewVersion_1.0.0\com_class.cs:行号 117

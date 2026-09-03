@@ -1,0 +1,22 @@
+2017/5/11 17:30:58
+read file begin.
+2017/5/11 17:31:02
+read file end.
+2017/5/11 17:31:02
+read layout file begin.
+2017/5/11 17:31:03
+read layout file end.
+2017/5/11 17:31:03
+TMTFeatureSet_HCI begin.
+2017/5/11 17:31:22
+TMTFeatureSet_HCI end.
+2017/5/11 17:31:22
+TMTFeatureSet_XIEHE begin.
+2017/5/11 17:31:22
+TMTFeatureSet_XIEHE end.
+2017/5/11 17:31:22
+setting drawing points begin.
+2017/5/11 17:31:22
+setting drawing points end.
+2017/6/2 16:30:52
+read file begin.

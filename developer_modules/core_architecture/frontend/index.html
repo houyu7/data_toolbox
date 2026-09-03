@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>多模态数据分析平台</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/developer_modules/core_architecture/frontend/styles.css?v=20260903-owner-modules" />
+  </head>
+  <body>
+    <section id="coverPage" class="cover-page" aria-label="系统封面">
+      <img src="/developer_modules/core_architecture/assets/cover_page.png" alt="多模态神经功能解析与智能交互工具箱封面" />
+      <div class="cover-actions" aria-label="工具入口">
+        <button id="enterToolboxBtn" class="cover-entry primary">进入工具箱</button>
+      </div>
+    </section>
+
+    <header class="topbar hidden">
+      <div>
+        <h1 id="appTitle">多模态神经功能解析与智能交互工具箱</h1>
+        <p id="appSubtitle">Multimodal Neural Function Analysis and Intelligent Interaction Toolbox</p>
+      </div>
+      <button id="refreshBtn" class="icon-btn" title="刷新数据">↻</button>
+    </header>
+
+    <main class="app-shell hidden">
+      <aside class="side-nav" aria-label="系统导航">
+        <button id="backToCoverBtn" class="back-cover-btn">← 返回封面</button>
+        <section class="nav-group toolbox-nav">
+          <div class="nav-items open">
+            <button class="nav-item active" data-tab="interactionDataManage">交互数据管理</button>
+            <button class="nav-item" data-tab="taskFeatureAnalysis">交互任务的特征映射解析</button>
+            <button class="nav-item" data-tab="multimodalFeatureAnalysis">多模态特征解析</button>
+            <button class="nav-item" data-tab="explorationValidation">探索与验证</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="content-area">
+        <section id="interactionDataManage" class="panel active">
+          <div class="section-head">
+            <div>
+              <h2>交互数据管理</h2>
+              <p>Interactive Data Management</p>
+            </div>
+          </div>
+          <div id="caseManageBoard" class="case-board"></div>
+        </section>
+
+        <section id="taskFeatureAnalysis" class="panel">
+          <div class="section-head">
+            <div>
+              <h2>交互任务的特征映射解析</h2>
+              <p>Interactive Task Feature Mapping Analysis</p>
+            </div>
+            <div class="head-actions">
+              <button id="toggleFeatureListBtn" class="secondary-btn">隐藏特征列表</button>
+            </div>
+          </div>
+          <div class="workbench-tabs" data-workbench="taskFeatureAnalysis">
+            <button class="workbench-tab active" data-subpanel="taskDataOverviewPane">数据概览</button>
+            <button class="workbench-tab" data-subpanel="taskMappingPane">特征映射</button>
+            <button class="workbench-tab" data-subpanel="caseReportPane">诊断报告</button>
+          </div>
+          <div class="workbench-pane active" id="taskDataOverviewPane">
+            <div class="population-layout">
+              <aside class="task-menu-card">
+                <h3>测试任务</h3>
+                <div id="taskTree" class="task-tree"></div>
+              </aside>
+              <div id="populationTaskDetail" class="task-detail"></div>
+            </div>
+          </div>
+          <div class="workbench-pane" id="taskMappingPane">
+            <div id="featureMappingCanvas" class="mapping-canvas"></div>
+          </div>
+          <div class="workbench-pane" id="caseReportPane">
+            <div id="caseReportBoard" class="case-report"></div>
+          </div>
+        </section>
+
+        <section id="multimodalFeatureAnalysis" class="panel">
+          <div class="section-head">
+            <div>
+              <h2>多模态特征解析</h2>
+              <p>Multimodal Feature Analysis</p>
+            </div>
+          </div>
+          <div class="workbench-tabs" data-workbench="multimodalFeatureAnalysis">
+            <button class="workbench-tab active" data-subpanel="multimodalMappingPane">多模态映射</button>
+            <button class="workbench-tab" data-subpanel="multimodalExplorePane">特征探索</button>
+          </div>
+          <div class="workbench-pane active" id="multimodalMappingPane">
+            <div id="multimodalIdeaBoard" class="idea-board"></div>
+          </div>
+          <div class="workbench-pane" id="multimodalExplorePane">
+            <div class="case-explore-workbench">
+              <aside class="tool-panel explore-channel-panel">
+                <label>选择通道</label>
+                <div id="multiChannelChecks" class="channel-checks"></div>
+                <label>疾病/分组目标列<select id="multiTargetSelect"></select></label>
+                <button id="generateDemoDataBtn" class="secondary-btn full-btn">生成演示数据</button>
+                <div class="history-panel side-history">
+                  <div class="history-head">
+                    <h3>历史探索问题</h3>
+                    <button id="clearHistoryBtn" class="secondary-btn">清空历史</button>
+                  </div>
+                  <div id="multiExploreHistory" class="history-list"><p>暂无历史探索。</p></div>
+                </div>
+              </aside>
+              <section class="case-explore-modules">
+                <article class="explore-module">
+                  <div class="module-head">
+                    <div>
+                      <h3 id="featureAnalysisTitle">特征分析</h3>
+                      <p id="featureAnalysisSubtitle">Feature Correlation Analysis</p>
+                    </div>
+                    <button id="runFeatureAnalysisBtn">刷新分析</button>
+                  </div>
+                  <label>分析目标<textarea id="featureAnalysisGoalInput" placeholder="例如：分析特征间相关性，找出冗余特征和可能融合的低相关特征。"></textarea></label>
+                  <div id="featureAnalysisOutput" class="module-output">
+                    <p>选择通道后刷新，系统会以相关性图谱和少量建议呈现基础特征关系。</p>
+                  </div>
+                </article>
+                <article class="explore-module">
+                  <div class="module-head">
+                    <div>
+                      <h3 id="fusionExploreTitle">融合特征探索</h3>
+                      <p id="fusionExploreSubtitle">Fusion Feature Exploration</p>
+                    </div>
+                    <button id="runMultiExploreBtn">开始探索</button>
+                  </div>
+                  <label>探索目标<textarea id="multiGoalInput" placeholder="例如：探索归一化差值、取对数比值或跨任务稳定联合特征。"></textarea></label>
+                  <div id="multiExploreOutput" class="multi-output compact-output">
+                    <p>输入自由组合目标后，系统会调用 LLM 理解公式意图，并用图形展示相关候选结果。</p>
+                  </div>
+                </article>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section id="explorationValidation" class="panel">
+          <div class="section-head">
+            <div>
+              <h2>探索与验证</h2>
+              <p>Exploration and Validation</p>
+            </div>
+          </div>
+          <div class="validation-layout">
+            <article class="explore-module validation-placeholder">
+              <div class="module-head">
+                <div>
+                  <h3 id="validationWorkspaceTitle">验证工作台</h3>
+                  <p id="validationWorkspaceSubtitle">Validation Workspace</p>
+                </div>
+              </div>
+              <p id="validationWorkspaceText">后续用于汇总验证方案、实验记录、模型对比和结果复核。当前先保留界面骨架。</p>
+            </article>
+            <article class="explore-module">
+                <div class="module-head">
+                  <div>
+                    <h3 id="fusionModelTitle">融合诊断建模</h3>
+                    <p id="fusionModelSubtitle">Fusion Diagnostic Modeling</p>
+                  </div>
+                  <button id="runFusionModelBtn">训练模型</button>
+                </div>
+                <div class="validation-control-grid">
+                  <label>选择通道</label>
+                  <div id="validationChannelChecks" class="channel-checks"></div>
+                  <label>疾病/分组目标列<select id="validationTargetSelect"></select></label>
+                </div>
+                <div class="model-control-grid">
+                  <label>模型类型<select id="fusionModelSelect">
+                    <option value="linear_svm">线性 SVM</option>
+                    <option value="logistic_regression">逻辑回归</option>
+                    <option value="gaussian_nb">Gaussian NB</option>
+                    <option value="knn">KNN</option>
+                  </select></label>
+                  <label>测试集比例<select id="fusionTestRatioSelect">
+                    <option value="0.25">25%</option>
+                    <option value="0.2">20%</option>
+                    <option value="0.3">30%</option>
+                  </select></label>
+                </div>
+                <label>建模目标<textarea id="fusionModelGoalInput" placeholder="例如：基于当前通道和融合候选特征训练疾病辅助诊断模型，并报告测试集表现。"></textarea></label>
+                <div id="fusionModelOutput" class="module-output">
+                  <p>选择通道和目标列后训练，用混淆矩阵、准确率和特征数量评估融合诊断能力。</p>
+                </div>
+            </article>
+          </div>
+        </section>
+
+      </section>
+    </main>
+
+    <script src="/developer_modules/core_architecture/frontend/dom-utils.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/core_architecture/frontend/feature-registry.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/interaction_data_management/frontend/collection_overview/config.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/multimodal_feature_analysis/frontend/multimodal_mapping/config.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/multimodal_feature_analysis/frontend/feature_exploration/config.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/exploration_validation/frontend/validation_workspace/config.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/exploration_validation/frontend/fusion_modeling/config.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/core_architecture/frontend/task-registry.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/interaction_channels/pen/frontend/channel.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/interaction_channels/grasp/frontend/channel.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/interaction_channels/posture/frontend/channel.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/interaction_channels/gesture/frontend/channel.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/interaction_channels/eye/frontend/channel.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/interaction_channels/tactile/frontend/channel.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/interaction_channels/emg/frontend/channel.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/interaction_channels/ecg/frontend/channel.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/interaction_channels/speech/frontend/channel.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/interaction_channels/face/frontend/channel.js?v=20260903-entry-fix"></script>
+    <script src="/developer_modules/core_architecture/frontend/app.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/core_architecture/frontend/shared/data_api.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/interaction_data_management/frontend/collection_overview/view.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/core_architecture/frontend/interaction_task_feature_mapping/data_overview_view.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/core_architecture/frontend/interaction_task_feature_mapping/feature_mapping_view.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/core_architecture/frontend/interaction_task_feature_mapping/diagnosis_report_view.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/multimodal_feature_analysis/frontend/view.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/exploration_validation/frontend/view.js?v=20260903-owner-modules"></script>
+    <script src="/developer_modules/core_architecture/frontend/bootstrap.js?v=20260903-owner-modules"></script>
+  </body>
+</html>

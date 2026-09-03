@@ -1,0 +1,992 @@
+[
+  {
+    "id": "20260826125329366959",
+    "created_at": "2026-08-26 12:53:29",
+    "goal": "探索语音速度与肌电震颤功率之间的归一化差值和比值融合特征",
+    "channels": [
+      "笔式",
+      "抓握",
+      "眼动",
+      "肌电",
+      "语音",
+      "其他"
+    ],
+    "target_column": "diagnosis",
+    "sample_count": 108,
+    "labeled_sample_count": 72,
+    "feature_count": 96,
+    "target_distribution": {
+      "control": 36,
+      "disease": 36
+    },
+    "top_features": [
+      {
+        "feature": "肌电::tremor_band_power::mean",
+        "score": 0.7965498695004438,
+        "stability": 0.575,
+        "goal_match": 0.45,
+        "display_score": 1.247,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::tremor_band_power::median",
+        "score": 0.7965994174339736,
+        "stability": 0.775,
+        "goal_match": 0.45,
+        "display_score": 1.247,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "median"
+      },
+      {
+        "feature": "语音::speech_rate::mean",
+        "score": 0.7927340735246615,
+        "stability": 0.475,
+        "goal_match": 0.45,
+        "display_score": 1.243,
+        "channel": "语音",
+        "source_feature": "speech_rate",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::activation_delay::mean",
+        "score": 0.7913542844755381,
+        "stability": 0.6,
+        "goal_match": 0.45,
+        "display_score": 1.241,
+        "channel": "肌电",
+        "source_feature": "activation_delay",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::activation_delay::median",
+        "score": 0.7816697038151185,
+        "stability": 0.35,
+        "goal_match": 0.45,
+        "display_score": 1.232,
+        "channel": "肌电",
+        "source_feature": "activation_delay",
+        "stat": "median"
+      },
+      {
+        "feature": "肌电::tremor_band_power::max",
+        "score": 0.7787961384331774,
+        "stability": 0.175,
+        "goal_match": 0.45,
+        "display_score": 1.229,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "max"
+      },
+      {
+        "feature": "语音::voice_intensity_var::mean",
+        "score": 0.7711809660079066,
+        "stability": 0.075,
+        "goal_match": 0.45,
+        "display_score": 1.221,
+        "channel": "语音",
+        "source_feature": "voice_intensity_var",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::tremor_band_power::min",
+        "score": 0.7691623324679397,
+        "stability": 0.05,
+        "goal_match": 0.45,
+        "display_score": 1.219,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "min"
+      },
+      {
+        "feature": "语音::speech_rate::median",
+        "score": 0.7678715464264818,
+        "stability": 0.125,
+        "goal_match": 0.45,
+        "display_score": 1.218,
+        "channel": "语音",
+        "source_feature": "speech_rate",
+        "stat": "median"
+      },
+      {
+        "feature": "语音::jitter_percent::median",
+        "score": 0.7660890306879449,
+        "stability": 0.05,
+        "goal_match": 0.45,
+        "display_score": 1.216,
+        "channel": "语音",
+        "source_feature": "jitter_percent",
+        "stat": "median"
+      },
+      {
+        "feature": "语音::pause_ratio::median",
+        "score": 0.7653922137835926,
+        "stability": 0.025,
+        "goal_match": 0.45,
+        "display_score": 1.215,
+        "channel": "语音",
+        "source_feature": "pause_ratio",
+        "stat": "median"
+      },
+      {
+        "feature": "语音::jitter_percent::mean",
+        "score": 0.7633625772150884,
+        "stability": 0.025,
+        "goal_match": 0.45,
+        "display_score": 1.213,
+        "channel": "语音",
+        "source_feature": "jitter_percent",
+        "stat": "mean"
+      }
+    ],
+    "cross_channel_combinations": [
+      {
+        "feature": "normdiff(语音::speech_rate::mean,肌电::activation_delay::mean)",
+        "operation": "目标公式",
+        "formula_template": "normdiff(f1,f2)",
+        "formula_name": "归一化差值",
+        "formula_reason": "根据目标中的归一化差值意图生成。",
+        "score": 0.8220040718900256,
+        "stability": 0.537,
+        "goal_match": 0.9,
+        "display_score": 2.002,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "normdiff(肌电::activation_delay::mean,语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "normdiff(f1,f2)",
+        "formula_name": "归一化差值",
+        "formula_reason": "根据目标中的归一化差值意图生成。",
+        "score": 0.8220040718900256,
+        "stability": 0.537,
+        "goal_match": 0.9,
+        "display_score": 2.002,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "normdiff(肌电::activation_delay::median,语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "normdiff(f1,f2)",
+        "formula_name": "归一化差值",
+        "formula_reason": "根据目标中的归一化差值意图生成。",
+        "score": 0.8141737630906503,
+        "stability": 0.412,
+        "goal_match": 0.9,
+        "display_score": 1.994,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "minmax(语音::speech_rate::mean)-minmax(肌电::activation_delay::mean)",
+        "operation": "目标公式",
+        "formula_template": "minmax(f1)-minmax(f2)",
+        "formula_name": "MinMax归一化差异",
+        "formula_reason": "根据目标中的归一化意图生成。",
+        "score": 0.8097317376300247,
+        "stability": 0.537,
+        "goal_match": 0.9,
+        "display_score": 1.99,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "minmax(肌电::activation_delay::mean)-minmax(语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "minmax(f1)-minmax(f2)",
+        "formula_name": "MinMax归一化差异",
+        "formula_reason": "根据目标中的归一化意图生成。",
+        "score": 0.8097317376300247,
+        "stability": 0.537,
+        "goal_match": 0.9,
+        "display_score": 1.99,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "minmax(肌电::activation_delay::median)-minmax(语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "minmax(f1)-minmax(f2)",
+        "formula_name": "MinMax归一化差异",
+        "formula_reason": "根据目标中的归一化意图生成。",
+        "score": 0.805890874366018,
+        "stability": 0.412,
+        "goal_match": 0.9,
+        "display_score": 1.986,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "minmax(肌电::tremor_band_power::median)-minmax(语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "minmax(f1)-minmax(f2)",
+        "formula_name": "MinMax归一化差异",
+        "formula_reason": "根据目标中的归一化意图生成。",
+        "score": 0.8045668976929822,
+        "stability": 0.625,
+        "goal_match": 0.9,
+        "display_score": 1.985,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "minmax(肌电::tremor_band_power::mean)-minmax(语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "minmax(f1)-minmax(f2)",
+        "formula_name": "MinMax归一化差异",
+        "formula_reason": "根据目标中的归一化意图生成。",
+        "score": 0.8050793692307642,
+        "stability": 0.525,
+        "goal_match": 0.9,
+        "display_score": 1.985,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      }
+    ],
+    "visualization_plan": {
+      "primary": "heatmap",
+      "charts": [
+        {
+          "type": "heatmap",
+          "title": "目标相关性热力图",
+          "reason": "比较候选特征在目标相关、疾病相关和稳定性上的整体强弱。"
+        },
+        {
+          "type": "contribution",
+          "title": "通道贡献比重图",
+          "reason": "汇总高分候选来自哪些通道，判断关键证据是否集中或互补。"
+        },
+        {
+          "type": "network",
+          "title": "跨通道组合网络",
+          "reason": "展示组合特征如何连接不同通道，突出联合信号来源。"
+        },
+        {
+          "type": "stability",
+          "title": "稳定性-相关性散点图",
+          "reason": "同时检查候选强度和 bootstrap 稳定性，避免只看单次高分。"
+        }
+      ],
+      "source": "local-rules",
+      "available": [
+        {
+          "title": "目标相关性热力图",
+          "reason": "比较候选特征在目标相关、疾病相关和稳定性上的整体强弱。"
+        },
+        {
+          "title": "特征变化趋势图",
+          "reason": "用于观察候选特征在样本顺序或后续时间序列中的变化方向。"
+        },
+        {
+          "title": "通道贡献比重图",
+          "reason": "汇总高分候选来自哪些通道，判断关键证据是否集中或互补。"
+        },
+        {
+          "title": "跨通道组合网络",
+          "reason": "展示组合特征如何连接不同通道，突出联合信号来源。"
+        },
+        {
+          "title": "稳定性-相关性散点图",
+          "reason": "同时检查候选强度和 bootstrap 稳定性，避免只看单次高分。"
+        }
+      ],
+      "data_scope": {
+        "top_feature_count": 12,
+        "combo_count": 8,
+        "channel_count": 6
+      }
+    },
+    "goal_response": "已将探索目标转成可计算公式 normdiff(f1,f2) 并实际生成新候选；当前最高目标公式组合为 normdiff(语音::speech_rate::mean,肌电::activation_delay::mean)，可与固定乘积、比值、差值组合一起比较。",
+    "next_exploration_goals": [
+      "围绕“探索语音速度与肌电震颤功率之间的归一化差值和比值融合特征”限制搜索在 肌电、语音 相关组合内，比较乘积、比例和差异三类联合特征。",
+      "围绕 肌电、语音 比较当前已计算的乘积、比值和差值组合，检查哪一类更稳定。",
+      "对 肌电::tremor_band_power::mean 绘制 disease/control 原始分布，确认高分是否由少数异常样本驱动。",
+      "补齐 肌电、语音 的采集质量指标，评估缺失和噪声对排序的影响。"
+    ],
+    "hypotheses": [
+      "当前最值得复核的单特征是 肌电::tremor_band_power::mean，建议回看它在不同疾病分组中的原始分布和异常值。",
+      "当前高贡献通道集中在 肌电、语音，下一轮应确认这些通道的采集质量和样本覆盖。",
+      "探索目标“探索语音速度与肌电震颤功率之间的归一化差值和比值融合特征”应进一步转成可检验问题：哪些通道组合在目标分组中稳定高于单通道特征。"
+    ]
+  },
+  {
+    "id": "20260826125215091727",
+    "created_at": "2026-08-26 12:52:15",
+    "goal": "探索语音速度与肌电震颤功率之间的归一化差值和比值融合特征",
+    "channels": [
+      "笔式",
+      "抓握",
+      "眼动",
+      "肌电",
+      "语音",
+      "其他"
+    ],
+    "target_column": "diagnosis",
+    "sample_count": 108,
+    "labeled_sample_count": 72,
+    "feature_count": 96,
+    "target_distribution": {
+      "control": 36,
+      "disease": 36
+    },
+    "top_features": [
+      {
+        "feature": "肌电::tremor_band_power::mean",
+        "score": 0.7965498695004438,
+        "stability": 0.575,
+        "goal_match": 0.45,
+        "display_score": 1.247,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::tremor_band_power::median",
+        "score": 0.7965994174339736,
+        "stability": 0.775,
+        "goal_match": 0.45,
+        "display_score": 1.247,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "median"
+      },
+      {
+        "feature": "语音::speech_rate::mean",
+        "score": 0.7927340735246615,
+        "stability": 0.475,
+        "goal_match": 0.45,
+        "display_score": 1.243,
+        "channel": "语音",
+        "source_feature": "speech_rate",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::activation_delay::mean",
+        "score": 0.7913542844755381,
+        "stability": 0.6,
+        "goal_match": 0.45,
+        "display_score": 1.241,
+        "channel": "肌电",
+        "source_feature": "activation_delay",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::activation_delay::median",
+        "score": 0.7816697038151185,
+        "stability": 0.35,
+        "goal_match": 0.45,
+        "display_score": 1.232,
+        "channel": "肌电",
+        "source_feature": "activation_delay",
+        "stat": "median"
+      },
+      {
+        "feature": "肌电::tremor_band_power::max",
+        "score": 0.7787961384331774,
+        "stability": 0.175,
+        "goal_match": 0.45,
+        "display_score": 1.229,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "max"
+      },
+      {
+        "feature": "语音::voice_intensity_var::mean",
+        "score": 0.7711809660079066,
+        "stability": 0.075,
+        "goal_match": 0.45,
+        "display_score": 1.221,
+        "channel": "语音",
+        "source_feature": "voice_intensity_var",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::tremor_band_power::min",
+        "score": 0.7691623324679397,
+        "stability": 0.05,
+        "goal_match": 0.45,
+        "display_score": 1.219,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "min"
+      },
+      {
+        "feature": "语音::speech_rate::median",
+        "score": 0.7678715464264818,
+        "stability": 0.125,
+        "goal_match": 0.45,
+        "display_score": 1.218,
+        "channel": "语音",
+        "source_feature": "speech_rate",
+        "stat": "median"
+      },
+      {
+        "feature": "语音::jitter_percent::median",
+        "score": 0.7660890306879449,
+        "stability": 0.05,
+        "goal_match": 0.45,
+        "display_score": 1.216,
+        "channel": "语音",
+        "source_feature": "jitter_percent",
+        "stat": "median"
+      },
+      {
+        "feature": "语音::pause_ratio::median",
+        "score": 0.7653922137835926,
+        "stability": 0.025,
+        "goal_match": 0.45,
+        "display_score": 1.215,
+        "channel": "语音",
+        "source_feature": "pause_ratio",
+        "stat": "median"
+      },
+      {
+        "feature": "语音::jitter_percent::mean",
+        "score": 0.7633625772150884,
+        "stability": 0.025,
+        "goal_match": 0.45,
+        "display_score": 1.213,
+        "channel": "语音",
+        "source_feature": "jitter_percent",
+        "stat": "mean"
+      }
+    ],
+    "cross_channel_combinations": [
+      {
+        "feature": "normdiff(语音::speech_rate::mean,肌电::activation_delay::mean)",
+        "operation": "目标公式",
+        "formula_template": "normdiff(f1,f2)",
+        "formula_name": "归一化差值",
+        "formula_reason": "根据目标中的归一化差值意图生成。",
+        "score": 0.8220040718900256,
+        "stability": 0.537,
+        "goal_match": 0.9,
+        "display_score": 2.002,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "normdiff(肌电::activation_delay::mean,语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "normdiff(f1,f2)",
+        "formula_name": "归一化差值",
+        "formula_reason": "根据目标中的归一化差值意图生成。",
+        "score": 0.8220040718900256,
+        "stability": 0.537,
+        "goal_match": 0.9,
+        "display_score": 2.002,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "normdiff(肌电::activation_delay::median,语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "normdiff(f1,f2)",
+        "formula_name": "归一化差值",
+        "formula_reason": "根据目标中的归一化差值意图生成。",
+        "score": 0.8141737630906503,
+        "stability": 0.412,
+        "goal_match": 0.9,
+        "display_score": 1.994,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "minmax(语音::speech_rate::mean)-minmax(肌电::activation_delay::mean)",
+        "operation": "目标公式",
+        "formula_template": "minmax(f1)-minmax(f2)",
+        "formula_name": "MinMax归一化差异",
+        "formula_reason": "根据目标中的归一化意图生成。",
+        "score": 0.8097317376300247,
+        "stability": 0.537,
+        "goal_match": 0.9,
+        "display_score": 1.99,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "minmax(肌电::activation_delay::mean)-minmax(语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "minmax(f1)-minmax(f2)",
+        "formula_name": "MinMax归一化差异",
+        "formula_reason": "根据目标中的归一化意图生成。",
+        "score": 0.8097317376300247,
+        "stability": 0.537,
+        "goal_match": 0.9,
+        "display_score": 1.99,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "minmax(肌电::activation_delay::median)-minmax(语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "minmax(f1)-minmax(f2)",
+        "formula_name": "MinMax归一化差异",
+        "formula_reason": "根据目标中的归一化意图生成。",
+        "score": 0.805890874366018,
+        "stability": 0.412,
+        "goal_match": 0.9,
+        "display_score": 1.986,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "minmax(肌电::tremor_band_power::median)-minmax(语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "minmax(f1)-minmax(f2)",
+        "formula_name": "MinMax归一化差异",
+        "formula_reason": "根据目标中的归一化意图生成。",
+        "score": 0.8045668976929822,
+        "stability": 0.625,
+        "goal_match": 0.9,
+        "display_score": 1.985,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "minmax(肌电::tremor_band_power::mean)-minmax(语音::speech_rate::mean)",
+        "operation": "目标公式",
+        "formula_template": "minmax(f1)-minmax(f2)",
+        "formula_name": "MinMax归一化差异",
+        "formula_reason": "根据目标中的归一化意图生成。",
+        "score": 0.8050793692307642,
+        "stability": 0.525,
+        "goal_match": 0.9,
+        "display_score": 1.985,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      }
+    ],
+    "visualization_plan": {
+      "primary": "heatmap",
+      "charts": [
+        {
+          "type": "heatmap",
+          "title": "目标相关性热力图",
+          "reason": "比较候选特征在目标相关、疾病相关和稳定性上的整体强弱。"
+        },
+        {
+          "type": "contribution",
+          "title": "通道贡献比重图",
+          "reason": "汇总高分候选来自哪些通道，判断关键证据是否集中或互补。"
+        },
+        {
+          "type": "network",
+          "title": "跨通道组合网络",
+          "reason": "展示组合特征如何连接不同通道，突出联合信号来源。"
+        },
+        {
+          "type": "stability",
+          "title": "稳定性-相关性散点图",
+          "reason": "同时检查候选强度和 bootstrap 稳定性，避免只看单次高分。"
+        }
+      ],
+      "source": "local-rules",
+      "available": [
+        {
+          "title": "目标相关性热力图",
+          "reason": "比较候选特征在目标相关、疾病相关和稳定性上的整体强弱。"
+        },
+        {
+          "title": "特征变化趋势图",
+          "reason": "用于观察候选特征在样本顺序或后续时间序列中的变化方向。"
+        },
+        {
+          "title": "通道贡献比重图",
+          "reason": "汇总高分候选来自哪些通道，判断关键证据是否集中或互补。"
+        },
+        {
+          "title": "跨通道组合网络",
+          "reason": "展示组合特征如何连接不同通道，突出联合信号来源。"
+        },
+        {
+          "title": "稳定性-相关性散点图",
+          "reason": "同时检查候选强度和 bootstrap 稳定性，避免只看单次高分。"
+        }
+      ],
+      "data_scope": {
+        "top_feature_count": 12,
+        "combo_count": 8,
+        "channel_count": 6
+      }
+    },
+    "goal_response": "已将探索目标转成可计算公式 normdiff(f1,f2) 并实际生成新候选；当前最高目标公式组合为 normdiff(语音::speech_rate::mean,肌电::activation_delay::mean)，可与固定乘积、比值、差值组合一起比较。",
+    "next_exploration_goals": [
+      "围绕“探索语音速度与肌电震颤功率之间的归一化差值和比值融合特征”限制搜索在 肌电、语音 相关组合内，比较乘积、比例和差异三类联合特征。",
+      "围绕 肌电、语音 比较当前已计算的乘积、比值和差值组合，检查哪一类更稳定。",
+      "对 肌电::tremor_band_power::mean 绘制 disease/control 原始分布，确认高分是否由少数异常样本驱动。",
+      "补齐 肌电、语音 的采集质量指标，评估缺失和噪声对排序的影响。"
+    ],
+    "hypotheses": [
+      "当前最值得复核的单特征是 肌电::tremor_band_power::mean，建议回看它在不同疾病分组中的原始分布和异常值。",
+      "当前高贡献通道集中在 肌电、语音，下一轮应确认这些通道的采集质量和样本覆盖。",
+      "探索目标“探索语音速度与肌电震颤功率之间的归一化差值和比值融合特征”应进一步转成可检验问题：哪些通道组合在目标分组中稳定高于单通道特征。"
+    ]
+  },
+  {
+    "id": "20260824104932283984",
+    "created_at": "2026-08-24 10:49:32",
+    "goal": "查看“目标相关性热力图”",
+    "channels": [
+      "笔式",
+      "抓握",
+      "眼动",
+      "肌电",
+      "语音"
+    ],
+    "target_column": "diagnosis",
+    "sample_count": 108,
+    "labeled_sample_count": 72,
+    "feature_count": 96,
+    "target_distribution": {
+      "control": 36,
+      "disease": 36
+    },
+    "top_features": [
+      {
+        "feature": "肌电::tremor_band_power::mean",
+        "score": 0.7965498695004438,
+        "stability": 0.575,
+        "goal_match": 0.0,
+        "display_score": 0.797,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::tremor_band_power::median",
+        "score": 0.7965994174339736,
+        "stability": 0.775,
+        "goal_match": 0.0,
+        "display_score": 0.797,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "median"
+      },
+      {
+        "feature": "语音::speech_rate::mean",
+        "score": 0.7927340735246615,
+        "stability": 0.475,
+        "goal_match": 0.0,
+        "display_score": 0.793,
+        "channel": "语音",
+        "source_feature": "speech_rate",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::activation_delay::mean",
+        "score": 0.7913542844755381,
+        "stability": 0.6,
+        "goal_match": 0.0,
+        "display_score": 0.791,
+        "channel": "肌电",
+        "source_feature": "activation_delay",
+        "stat": "mean"
+      },
+      {
+        "feature": "笔式::pressure_variability::mean",
+        "score": 0.7880658269584183,
+        "stability": 0.4,
+        "goal_match": 0.0,
+        "display_score": 0.788,
+        "channel": "笔式",
+        "source_feature": "pressure_variability",
+        "stat": "mean"
+      },
+      {
+        "feature": "笔式::pressure_variability::max",
+        "score": 0.7868498202973613,
+        "stability": 0.475,
+        "goal_match": 0.0,
+        "display_score": 0.787,
+        "channel": "笔式",
+        "source_feature": "pressure_variability",
+        "stat": "max"
+      },
+      {
+        "feature": "肌电::activation_delay::median",
+        "score": 0.7816697038151185,
+        "stability": 0.35,
+        "goal_match": 0.0,
+        "display_score": 0.782,
+        "channel": "肌电",
+        "source_feature": "activation_delay",
+        "stat": "median"
+      },
+      {
+        "feature": "肌电::tremor_band_power::max",
+        "score": 0.7787961384331774,
+        "stability": 0.175,
+        "goal_match": 0.0,
+        "display_score": 0.779,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "max"
+      },
+      {
+        "feature": "笔式::pressure_variability::median",
+        "score": 0.7775026742076531,
+        "stability": 0.125,
+        "goal_match": 0.0,
+        "display_score": 0.778,
+        "channel": "笔式",
+        "source_feature": "pressure_variability",
+        "stat": "median"
+      },
+      {
+        "feature": "语音::voice_intensity_var::mean",
+        "score": 0.7711809660079066,
+        "stability": 0.075,
+        "goal_match": 0.0,
+        "display_score": 0.771,
+        "channel": "语音",
+        "source_feature": "voice_intensity_var",
+        "stat": "mean"
+      },
+      {
+        "feature": "肌电::tremor_band_power::min",
+        "score": 0.7691623324679397,
+        "stability": 0.05,
+        "goal_match": 0.0,
+        "display_score": 0.769,
+        "channel": "肌电",
+        "source_feature": "tremor_band_power",
+        "stat": "min"
+      },
+      {
+        "feature": "笔式::angle_jitter::min",
+        "score": 0.7683440402916935,
+        "stability": 0.1,
+        "goal_match": 0.0,
+        "display_score": 0.768,
+        "channel": "笔式",
+        "source_feature": "angle_jitter",
+        "stat": "min"
+      }
+    ],
+    "cross_channel_combinations": [
+      {
+        "feature": "mean(笔式::pressure_variability::max,肌电::tremor_band_power::mean,肌电::tremor_band_power::median)",
+        "operation": "LLM公式",
+        "formula_template": "mean(f1,f2,f8)",
+        "formula_name": "肌电震颤强度综合",
+        "formula_reason": "组合肌电震颤带功率的三个统计量（均值、中位数、最大值）以反映整体震颤强度，便于后续相关性分析。",
+        "score": 0.8039760800255233,
+        "stability": 0.608,
+        "goal_match": 0.45,
+        "display_score": 1.654,
+        "channels": [
+          "笔式",
+          "肌电"
+        ]
+      },
+      {
+        "feature": "mean(笔式::pressure_variability::max,肌电::tremor_band_power::mean)",
+        "operation": "LLM公式",
+        "formula_template": "mean(f4,f7)",
+        "formula_name": "肌电激活延迟综合",
+        "formula_reason": "综合肌电激活延迟的均值和中位数，代表肌肉激活时间特征。",
+        "score": 0.8043029646319176,
+        "stability": 0.525,
+        "goal_match": 0.45,
+        "display_score": 1.654,
+        "channels": [
+          "笔式",
+          "肌电"
+        ]
+      },
+      {
+        "feature": "mean(笔式::pressure_variability::mean,肌电::tremor_band_power::mean,肌电::tremor_band_power::median)",
+        "operation": "LLM公式",
+        "formula_template": "mean(f1,f2,f8)",
+        "formula_name": "肌电震颤强度综合",
+        "formula_reason": "组合肌电震颤带功率的三个统计量（均值、中位数、最大值）以反映整体震颤强度，便于后续相关性分析。",
+        "score": 0.8006465555051895,
+        "stability": 0.583,
+        "goal_match": 0.45,
+        "display_score": 1.651,
+        "channels": [
+          "笔式",
+          "肌电"
+        ]
+      },
+      {
+        "feature": "mean(笔式::pressure_variability::mean,肌电::tremor_band_power::mean)",
+        "operation": "LLM公式",
+        "formula_template": "mean(f4,f7)",
+        "formula_name": "肌电激活延迟综合",
+        "formula_reason": "综合肌电激活延迟的均值和中位数，代表肌肉激活时间特征。",
+        "score": 0.7999787693028172,
+        "stability": 0.487,
+        "goal_match": 0.45,
+        "display_score": 1.65,
+        "channels": [
+          "笔式",
+          "肌电"
+        ]
+      },
+      {
+        "feature": "mean(肌电::activation_delay::mean,笔式::pressure_variability::mean,笔式::pressure_variability::max)",
+        "operation": "LLM公式",
+        "formula_template": "mean(f1,f2,f8)",
+        "formula_name": "肌电震颤强度综合",
+        "formula_reason": "组合肌电震颤带功率的三个统计量（均值、中位数、最大值）以反映整体震颤强度，便于后续相关性分析。",
+        "score": 0.7926191656104997,
+        "stability": 0.492,
+        "goal_match": 0.45,
+        "display_score": 1.643,
+        "channels": [
+          "笔式",
+          "肌电"
+        ]
+      },
+      {
+        "feature": "mean(肌电::activation_delay::mean,笔式::pressure_variability::mean)",
+        "operation": "LLM公式",
+        "formula_template": "mean(f4,f7)",
+        "formula_name": "肌电激活延迟综合",
+        "formula_reason": "综合肌电激活延迟的均值和中位数，代表肌肉激活时间特征。",
+        "score": 0.7918629765235439,
+        "stability": 0.5,
+        "goal_match": 0.45,
+        "display_score": 1.642,
+        "channels": [
+          "笔式",
+          "肌电"
+        ]
+      },
+      {
+        "feature": "mean(肌电::tremor_band_power::median,语音::speech_rate::mean,肌电::activation_delay::mean)",
+        "operation": "LLM公式",
+        "formula_template": "mean(f1,f2,f8)",
+        "formula_name": "肌电震颤强度综合",
+        "formula_reason": "组合肌电震颤带功率的三个统计量（均值、中位数、最大值）以反映整体震颤强度，便于后续相关性分析。",
+        "score": 0.7908495884822435,
+        "stability": 0.617,
+        "goal_match": 0.45,
+        "display_score": 1.641,
+        "channels": [
+          "肌电",
+          "语音"
+        ]
+      },
+      {
+        "feature": "mean(肌电::tremor_band_power::max,笔式::pressure_variability::median)",
+        "operation": "LLM公式",
+        "formula_template": "mean(f4,f7)",
+        "formula_name": "肌电激活延迟综合",
+        "formula_reason": "综合肌电激活延迟的均值和中位数，代表肌肉激活时间特征。",
+        "score": 0.791494253447704,
+        "stability": 0.15,
+        "goal_match": 0.45,
+        "display_score": 1.641,
+        "channels": [
+          "笔式",
+          "肌电"
+        ]
+      }
+    ],
+    "visualization_plan": {
+      "primary": "heatmap",
+      "charts": [
+        {
+          "type": "heatmap",
+          "title": "目标相关性热力图",
+          "reason": "比较候选特征在目标相关、疾病相关和稳定性上的整体强弱。"
+        },
+        {
+          "type": "contribution",
+          "title": "通道贡献比重图",
+          "reason": "汇总高分候选来自哪些通道，判断关键证据是否集中或互补。"
+        },
+        {
+          "type": "network",
+          "title": "跨通道组合网络",
+          "reason": "展示组合特征如何连接不同通道，突出联合信号来源。"
+        },
+        {
+          "type": "stability",
+          "title": "稳定性-相关性散点图",
+          "reason": "同时检查候选强度和 bootstrap 稳定性，避免只看单次高分。"
+        }
+      ],
+      "source": "local-rules",
+      "available": [
+        {
+          "title": "目标相关性热力图",
+          "reason": "比较候选特征在目标相关、疾病相关和稳定性上的整体强弱。"
+        },
+        {
+          "title": "特征变化趋势图",
+          "reason": "用于观察候选特征在样本顺序或后续时间序列中的变化方向。"
+        },
+        {
+          "title": "通道贡献比重图",
+          "reason": "汇总高分候选来自哪些通道，判断关键证据是否集中或互补。"
+        },
+        {
+          "title": "跨通道组合网络",
+          "reason": "展示组合特征如何连接不同通道，突出联合信号来源。"
+        },
+        {
+          "title": "稳定性-相关性散点图",
+          "reason": "同时检查候选强度和 bootstrap 稳定性，避免只看单次高分。"
+        }
+      ],
+      "data_scope": {
+        "top_feature_count": 12,
+        "combo_count": 8,
+        "channel_count": 5
+      }
+    },
+    "goal_response": "目标相关性热力图显示，当前最能区分疾病组与对照组的单特征主要来自肌电（震颤带功率的均值/中位数）、语音（语速均值）以及笔式（压力变异性均值/最大值），其中肌电震颤带功率的两个统计量相关性得分约0.797，稳定性以中位数更高（0.775）。跨通道组合进一步显示，笔式压力变异性与肌电震颤/激活延迟构成的LLM公式组合得分超过0.80且稳定性多数在0.5以上，说明多通道联合信号比单特征可能更有判别价值。",
+    "next_exploration_goals": [
+      "对排名靠前的跨通道组合（如笔式+肌电）进行交叉验证，比较AUC与单特征，验证是否显著提升",
+      "补充抓握和眼动通道的特征进入相关性分析，当前top特征集中在笔式、肌电、语音，需要判断其他通道是否提供互补信息",
+      "对高相关但低稳定性的特征（如语音语速均值，稳定性0.475）做分层分析，检查是否受年龄、任务顺序或样本子群影响",
+      "基于组合特征构建多通道判别指数（例如逻辑回归），评估联合诊断效能并计算置换检验p值",
+      "考察肌电震颤功率与笔压变异之间的动态关系（如时间窗共变），检验是否存在运动执行中断假说"
+    ],
+    "hypotheses": [
+      "当前最值得复核的单特征是 肌电::tremor_band_power::mean，建议回看它在不同疾病分组中的原始分布和异常值。",
+      "当前高贡献通道集中在 笔式、肌电、语音，下一轮应确认这些通道的采集质量和样本覆盖。",
+      "探索目标“查看“目标相关性热力图””应进一步转成可检验问题：哪些通道组合在目标分组中稳定高于单通道特征。"
+    ]
+  }
+]

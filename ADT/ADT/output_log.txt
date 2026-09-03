@@ -1,0 +1,80 @@
+2018/11/8 10:45:05
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 10:48:39
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 10:50:37
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 10:53:03
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 16:34:11
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 16:35:17
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 16:35:48
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 17:24:12
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 17:28:19
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 18:45:28
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 20:44:21
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 20:45:35
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 20:48:02
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 20:48:44
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 20:56:31
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 21:34:59
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 21:37:07
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 21:38:55
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/8 21:43:20
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 10:51:41
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 11:35:48
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 11:42:28
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 11:43:17
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 11:47:01
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 16:03:20
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 16:06:43
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 16:13:13
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 16:28:11
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 16:34:17
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 星期五 20:22:27
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 星期五 20:23:28
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/9 星期五 20:24:04
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/10 星期六 16:47:13
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/11 星期日 9:32:15
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2018/11/25 星期日 20:23:42
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2019/11/28 星期四 17:27:36
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2021/1/12 星期二 14:48:17
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2021/1/20 星期三 16:07:34
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2023/3/31 星期五 12:48:36
+..\ADT\NSDAncillaryDiagnosticTool.exe start
+2026/8/19 16:31:42
+..\ADT\NSDAncillaryDiagnosticTool.exe start

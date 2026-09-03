@@ -1,0 +1,40 @@
+{
+  "patients": [
+    {
+      "id": "123456",
+      "name": "黄进",
+      "age": "7",
+      "sex": "男",
+      "handedness": "右利手",
+      "education": "小学",
+      "label": "随访观察",
+      "created_at": "2026-08-23 16:00:00",
+      "tests": [
+        {
+          "test_id": "write",
+          "test_name": "书写测试",
+          "test_time": "2026-08-23 17:46:53",
+          "file_path": "Data/笔式/write_1787478413888.csv",
+          "score": 0.0,
+          "summary": "已创建测试记录，等待 exe 写入结果"
+        },
+        {
+          "test_id": "line",
+          "test_name": "连线测试",
+          "test_time": "2026-08-23 16:28:45",
+          "file_path": "Data/笔式/2026-08-23-16/line_test.csv",
+          "score": 31.8,
+          "summary": "手功能状态良好"
+        },
+        {
+          "test_id": "tmta",
+          "test_name": "TMT-A",
+          "test_time": "2026-08-23 16:12:10",
+          "file_path": "Data/笔式/2026-08-23-16/tmta.csv",
+          "score": 42.5,
+          "summary": "视觉搜索与连线控制表现稳定"
+        }
+      ]
+    }
+  ]
+}
